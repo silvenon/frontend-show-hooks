@@ -1,0 +1,13 @@
+# OS
+.DS_Store
+
+# package managers
+node_modules
+*.log
+
+# Next.js
+.next
+out
+
+# text editors
+.vscode
