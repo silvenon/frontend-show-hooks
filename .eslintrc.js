@@ -2,14 +2,9 @@ module.exports = {
   env: {
     node: true,
     browser: true,
-    es2017: true,
+    es6: true,
   },
-  parserOptions: {
-    sourceType: 'module',
-    ecmaFeatures: {
-      jsx: true,
-    },
-  },
+  parser: 'babel-eslint',
   extends: [
     'eslint:recommended',
     'plugin:prettier/recommended',
@@ -26,6 +21,11 @@ module.exports = {
     },
   },
   rules: {
+    'no-unused-vars': ['error', {
+      ignoreRestSiblings: true,
+    }],
+    // prop validation is unnecessary for this workshop
+    'react/prop-types': 'off',
     // Next.js doesn't require React to be in scope for JSX
     'react/react-in-jsx-scope': 'off',
     'react-hooks/rules-of-hooks': 'error',
